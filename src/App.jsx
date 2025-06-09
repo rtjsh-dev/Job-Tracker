@@ -18,6 +18,7 @@ const App = () => {
     <>
       <Nav />
       <Routes>
+        <Route path="/" element={<AddJob/>}/>
         <Route path="/job-list" element={<JobLists jobs={jobs} />} />
         <Route
           path="/add-job"
