@@ -8,6 +8,7 @@ const AddJobForm = () => {
         <p className="flex items-center justify-center text-4xl font-bold text-[#2c3e50] mb-6">
           Jobs Applied for!
         </p>
+        <input type="text" placeholder="Source" />
         <input type="text" placeholder="Company" />
         <input type="text" placeholder="Status" />
         <input type="text" placeholder="Applied for" />
