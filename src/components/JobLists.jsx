@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "../App.css";
-import Button from "./Button";
 
 const JobLists = ({ jobs, setJobs }) => {
   const [editingId, setEditingId] = useState(null);
   const [editedJob, setEditedJob] = useState({
     companyName: "",
     position: "",
-    source: ""
+    source: "",
   });
 
   const startEditing = (job) => {
@@ -15,7 +14,7 @@ const JobLists = ({ jobs, setJobs }) => {
     setEditedJob({
       companyName: job.companyName,
       position: job.position,
-      source: job.source
+      source: job.source,
     });
   };
 
@@ -77,12 +76,18 @@ const JobLists = ({ jobs, setJobs }) => {
               </>
             ) : (
               <>
-                <h3 className="text-lg font-semibold">Company: {job.companyName}</h3>
+                <h3 className="text-lg font-semibold">
+                  Company: {job.companyName}
+                </h3>
                 <p>Position: {job.position}</p>
                 <p className="mb-2">Source: {job.source}</p>
                 <button
                   onClick={() => startEditing(job)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded"
+                  className={`px-3 py-1 rounded ${
+                    editingId === job.id
+                      ? "text-orange-500 underline"
+                      : "text-white bg-blue-500 hover:text-blue-500"
+                  }`}
                 >
                   Edit
                 </button>
