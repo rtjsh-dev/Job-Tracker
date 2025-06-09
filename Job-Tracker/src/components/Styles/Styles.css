@@ -15,16 +15,15 @@ input:focus {
   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
 }
 
-
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 45px;
   width: 80px;
-  border: 2px solid #1e3a8a;       /* Dark blue border */
+  border: 2px solid #1e3a8a; /* Dark blue border */
   border-radius: 8px;
-  background-color: rgb(93, 0, 255);        /* Blue background */
+  background-color: rgb(93, 0, 255); /* Blue background */
   color: white;
   font-size: 16px;
   font-weight: 600;
@@ -33,8 +32,8 @@ input:focus {
 }
 
 .btn:hover {
-  background-color: rgb(93, 0, 255);        /* Darker blue on hover */
-  transform: scale(1.05);           /* Slight zoom */
+  background-color: rgb(93, 0, 255); /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
   color: rgb(245, 173, 6);
 }
