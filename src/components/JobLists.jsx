@@ -36,7 +36,7 @@ const JobLists = ({ jobs, setJobs }) => {
       {jobs.length === 0 ? (
         <p>No jobs found.</p>
       ) : (
-        jobs.map((job) => (
+        jobs.map((job) => ( 
           <div
             key={job.id}
             className="bg-white p-4 rounded-xl shadow-md space-y-1"
