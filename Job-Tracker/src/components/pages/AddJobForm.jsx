@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddJobForm = () => {
   return (
-    <div>
+    <div className='flex justify-center text-black'>
       This is the job to be added
     </div>
   )

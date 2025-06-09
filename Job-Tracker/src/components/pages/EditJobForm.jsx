@@ -2,9 +2,13 @@ import React from 'react'
 
 const EditJobForm = () => {
   return (
-    <div>
+    <>
+    
+    
+    <div className='flex justify-center text-black'>
       This is the job to be edited
     </div>
+    </>
   )
 }
 

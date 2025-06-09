@@ -6,7 +6,7 @@ import AddJobForm from './components/pages/AddJobForm'
 import EditJobForm from './components/pages/EditJobForm'
 const App = () => {
   return (
-    <div className='text-red-400'>
+    <div className='text-white'>
       <Nav/>
       <Routes>
           <Route path="/" element={<JobList/>}/>

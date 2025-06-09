@@ -1,10 +1,14 @@
 import React from 'react'
-import { Link,NavLink } from 'react-router-dom'
+import { Link,NavLink } from 
+'react-router-dom'
+import "./Styles.css"
 const Nav = () => {
   return (
-    <nav>
-        <Link to="/" className=''>Website</Link>
-        <ul>
+    <nav className='flex sticky justify-between bg-green-100'>
+        <Link to="/" className='ml-4 mt-2'>
+        <img src={"final.png"} alt="Website Logo" className="h-10 w-auto" />
+        </Link>
+        <ul className='flex'>
             <li>
                 <NavLink to="/" >Job List</NavLink>
             </li>
