@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../App.css";
 
 const JobLists = ({ jobs, setJobs }) => {
   const [editingId, setEditingId] = useState(null);

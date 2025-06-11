@@ -6,7 +6,7 @@ const Nav = () => {
       <Link to="/">
         <h2 className="text-2xl font-medium text-blue-800">Job Tracker</h2>
       </Link>
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-6">
         <li>
           <NavLink to="/job-list">JobList</NavLink>
         </li>
