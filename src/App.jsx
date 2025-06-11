@@ -3,7 +3,7 @@ import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
 import JobLists from "./components/JobLists";
 import AddJob from "./components/AddJob";
-import EditJob from "./components/EditJob";
+
 const App = () => {
   const [jobs, setJobs] = useState([]);
 
@@ -14,6 +14,10 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+  localStorage.setItem("jobLists", JSON.stringify(jobs));
+}, [jobs]);
+
   return (
     <>
       <Nav />
@@ -23,10 +27,6 @@ const App = () => {
         <Route
           path="/add-job"
           element={<AddJob jobs={jobs} setJobs={setJobs} />}
-        />
-        <Route
-          path="/edit-job"
-          element={<EditJob jobs={jobs} setJobs={setJobs} />}
         />
       </Routes>
     </>

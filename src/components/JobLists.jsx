@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Delete from "./Delete";
 
 const JobLists = ({ jobs, setJobs }) => {
   const [editingId, setEditingId] = useState(null);
@@ -32,11 +31,13 @@ const JobLists = ({ jobs, setJobs }) => {
   };
 
   return (
-    <div className="text-black p-6 space-y-4">
+    <>
+    <div className="flex justify-center text-3xl mt-3">Jobs Applied For!</div>
+    <div className="text-black p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
       {jobs.length === 0 ? (
         <p>No jobs found.</p>
       ) : (
-        jobs.map((job) => ( 
+        jobs.map((job) => (
           <div
             key={job.id}
             className="bg-white p-4 rounded-xl shadow-md space-y-1"
@@ -82,17 +83,25 @@ const JobLists = ({ jobs, setJobs }) => {
                 <p>Position: {job.position}</p>
                 <p className="mb-2">Source: {job.source}</p>
                 <div className="flex gap-7">
-                <button
-                  onClick={() => startEditing(job)}
-                  className={`px-3 py-1 rounded ${
-                    editingId === job.id
-                      ? "text-orange-500 underline"
-                      : "text-white bg-blue-500 hover:text-blue-500"
-                  }`}
-                >
-                  Edit
-                </button>
-                <Delete jobs={jobs}/>
+                  <button
+                    onClick={() => startEditing(job)}
+                    className={`px-3 py-1 rounded ${
+                      editingId === job.id
+                        ? "text-orange-500 underline"
+                        : "text-white bg-blue-500 hover:text-blue-500"
+                    }`}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      const updatedJobs = jobs.filter((j) => j.id !== job.id);
+                      setJobs(updatedJobs);
+                    }}
+                    className="rounded-xl p-1 bg-red-500 text-white"
+                  >
+                    Delete
+                  </button>
                 </div>
               </>
             )}
@@ -100,6 +109,9 @@ const JobLists = ({ jobs, setJobs }) => {
         ))
       )}
     </div>
+    
+    </>
+    
   );
 };
 

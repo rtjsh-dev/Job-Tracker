@@ -8,13 +8,10 @@ const Nav = () => {
       </Link>
       <ul className="flex items-center gap-6">
         <li>
-          <NavLink to="/job-list">JobList</NavLink>
-        </li>
-        <li>
           <NavLink to="/add-job">Add Job</NavLink>
         </li>
         <li>
-          <NavLink to="/edit-job">Edit Job</NavLink>
+          <NavLink to="/job-list">JobList</NavLink>
         </li>
       </ul>
     </nav>
