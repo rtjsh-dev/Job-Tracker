@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Delete from "./Delete";
 
 const JobLists = ({ jobs, setJobs }) => {
   const [editingId, setEditingId] = useState(null);
@@ -80,6 +81,7 @@ const JobLists = ({ jobs, setJobs }) => {
                 </h3>
                 <p>Position: {job.position}</p>
                 <p className="mb-2">Source: {job.source}</p>
+                <div className="flex gap-7">
                 <button
                   onClick={() => startEditing(job)}
                   className={`px-3 py-1 rounded ${
@@ -90,6 +92,8 @@ const JobLists = ({ jobs, setJobs }) => {
                 >
                   Edit
                 </button>
+                <Delete jobs={jobs}/>
+                </div>
               </>
             )}
           </div>
