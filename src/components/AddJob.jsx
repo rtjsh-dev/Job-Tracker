@@ -1,14 +1,17 @@
 import { useState } from "react";
+import Button from "./AddJobButton";
 
 const AddJob = ({ jobs, setJobs }) => {
   const [companyName, setCompanyName] = useState("");
   const [position, setPosition] = useState("");
   const [source, setSource] = useState("");
+  const [jobAdded, setJobAdded] = useState(false);
+  const [status, setStatus] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Prevent empty submission
-    if (!companyName || !position || !source) {
+    if (!companyName || !position || !source || !status) {
       alert("All fields are required!");
       return;
     }
@@ -18,15 +21,24 @@ const AddJob = ({ jobs, setJobs }) => {
       companyName,
       position,
       source,
+      status
     };
 
     const updatedJobs = [...jobs, newJob];
     setJobs(updatedJobs);
     localStorage.setItem("jobLists", JSON.stringify(updatedJobs));
 
+    // Clear inputs
     setCompanyName("");
     setPosition("");
     setSource("");
+    setStatus("")
+
+    // Show success message
+    setJobAdded(true);
+
+    // Hide message after 3s
+    setTimeout(() => setJobAdded(false), 3000);
   };
 
   return (
@@ -59,12 +71,18 @@ const AddJob = ({ jobs, setJobs }) => {
           onChange={(e) => setSource(e.target.value)}
           className="w-full p-3 rounded-xl border border-gray-300"
         />
-        <button
-          type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl"
-        >
+        <input
+          type="text"
+          value={status}
+          placeholder="Status"
+          onChange={(e) => setStatus(e.target.value)}
+          className="w-full p-3 rounded-xl border border-gray-300"
+        />
+
+        {/* ✅ Pass jobAdded as prop */}
+        <Button type="submit" showMessage={jobAdded}>
           Add
-        </button>
+        </Button>
       </form>
     </div>
   );
