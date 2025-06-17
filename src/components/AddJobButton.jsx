@@ -8,7 +8,6 @@ const Button = ({ type = "button", children, className, showMessage }) => {
         {children}
       </button>
 
-      {/* Show success message if true */}
       {showMessage && (
         <p className="text-green-600 mt-2 text-center font-medium">
           Job added successfully

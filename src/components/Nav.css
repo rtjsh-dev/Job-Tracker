@@ -25,6 +25,6 @@ nav ul li a:not(.active):hover {
 
 @media (min-width: 640px) {
   .menu {
-    display: none !important; /* override any base CSS */
+    display: none !important; 
   }
 }
