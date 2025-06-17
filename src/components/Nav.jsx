@@ -24,7 +24,7 @@ const Nav = () => {
       <ul
         className={`${
           menuOpen ? "flex" : "hidden"
-        } flex-col sm:flex sm:flex-row sm:items-center gap-4 mt-4 sm:mt-0 sm:visible`}
+        } flex-col sm:flex sm:flex-row sm:items-center gap-10 mt-4 pr-5 sm:mt-0 sm:visible`}
       >
         <li>
           <NavLink
