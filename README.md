@@ -1,12 +1,59 @@
-# React + Vite
+# 💼 Job Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and efficient job tracking app built with **React**. It lets users **add**, **edit**, **delete**, and **view** job applications — all stored locally using `localStorage`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Features
 
-## Expanding the ESLint configuration
+- Add job (company, position, status, source)
+- Edit & delete entries
+- View all applied jobs
+- Data persists via `localStorage`
+- Clean UI with **Tailwind CSS**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Tech Stack
+
+- React (Hooks)
+- Tailwind CSS
+- LocalStorage
+- Vite (build tool)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/rtjsh/job-tracker.git
+cd job-tracker
+npm install
+npm run dev
+
+🎯 Why I Built This:
+As part of my journey in learning React, I wanted to build something practical and resume-worthy. This project showcases my ability to:
+
+1) Use React Hooks for managing component state
+
+2) Create reusable components
+
+3) Handle form submissions and validations
+
+4) Implement persistent client-side storage
+
+🧩 Ideal for students, developers, and professionals looking to manage their job applications efficiently.
+
+🌱 Future Enhancements:
+1) 🔍 Add search & filter functionality
+
+2) 🗂️ Categorize jobs by status (e.g., Interviewed, Rejected, Pending)
+
+3) 🔒 Add user authentication and backend support (Firebase, Supabase, Node.js)
+
+4) 📱 Make it fully responsive for all screen sizes
+
+🧑‍💻 Author:
+Rajesh Thapa
+LinkedIn: linkedin.com/in/rtjsh
+GitHub: @rtjsh
