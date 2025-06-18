@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { BarChart3, List, Plus } from "lucide-react";
+import myImage from '/final.png';
 
 export const Layout = ({ children, onAddJob, jobCount }) => {
   const location = useLocation();
@@ -12,7 +13,7 @@ export const Layout = ({ children, onAddJob, jobCount }) => {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <img
-                src="./src/assets/final.png" 
+                src={myImage}
                 className="h-10 w-10 object-contain"
               />
               <div>
