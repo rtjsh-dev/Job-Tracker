@@ -1,7 +1,6 @@
 import React from "react";
 import { Search, Filter } from "lucide-react";
 import { JOB_STATUS_CONFIG } from "../utils/constants";
-import { jobsApiService } from "../services/jobsApi";
 export const SearchBar = ({
   searchTerm,
   onSearchChange,
@@ -31,7 +30,7 @@ export const SearchBar = ({
               onChange={(e) => onStatusFilterChange(e.target.value)}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors appearance-none bg-white"
             >
-              <option value="all">All Statuses</option>
+              <option value="all">All Status</option>
               {JOB_STATUS_CONFIG.map((status) => (
                 <option key={status.value} value={status.value}>
                   {status.label}

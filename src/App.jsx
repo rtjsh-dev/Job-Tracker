@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { saveJobs, loadJobs, generateId } from './utils/storage';
-import { analytics } from './services/analytics';
-import { Layout } from './components/Layout';
-import { JobForm } from './components/JobForm';
-import { JobSearchModal } from './components/JobSearchModal';
-import { DashboardPage } from './pages/DashboardPage';
-import { JobsPage } from './pages/JobsPage';
-import { AnalyticsPage } from './pages/AnalyticsPage';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { saveJobs, loadJobs, generateId } from "./utils/storage";
+import { Layout } from "./components/Layout";
+import { JobForm } from "./components/JobForm";
+// import { JobSearchModal } from "./components/JobSearchModal";
+import { DashboardPage } from "./pages/DashboardPage";
+import { JobsPage } from "./pages/JobsPage";
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -19,7 +17,6 @@ function App() {
   useEffect(() => {
     const savedJobs = loadJobs();
     setJobs(savedJobs);
-    analytics.trackPageView('app_start');
   }, []);
 
   // Save jobs to localStorage whenever jobs change
@@ -34,31 +31,30 @@ function App() {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-    setJobs(prev => [newJob, ...prev]);
-    analytics.trackJobAdded(jobData);
+    setJobs((prev) => [newJob, ...prev]);
   };
 
   const handleEditJob = (jobData) => {
     if (!editingJob) return;
-    
+
     const updatedJob = {
       ...editingJob,
       ...jobData,
       updatedAt: new Date().toISOString(),
     };
-    
-    setJobs(prev => prev.map(job => job.id === editingJob.id ? updatedJob : job));
-    analytics.trackJobUpdated(jobData);
+
+    setJobs((prev) =>
+      prev.map((job) => (job.id === editingJob.id ? updatedJob : job))
+    );
     setEditingJob(null);
   };
 
   const handleDeleteJob = (id) => {
-    const jobToDelete = jobs.find(job => job.id === id);
-    if (window.confirm('Are you sure you want to delete this job application?')) {
-      setJobs(prev => prev.filter(job => job.id !== id));
-      if (jobToDelete) {
-        analytics.trackJobDeleted(jobToDelete);
-      }
+    const jobToDelete = jobs.find((job) => job.id === id);
+    if (
+      window.confirm("Are you sure you want to delete this job application?")
+    ) {
+      setJobs((prev) => prev.filter((job) => job.id !== id));
     }
   };
 
@@ -80,39 +76,30 @@ function App() {
   const openAddForm = () => {
     setEditingJob(null);
     setIsFormOpen(true);
-    analytics.track('form_opened', { type: 'add_job' });
   };
 
   const openJobSearch = () => {
     setIsJobSearchOpen(true);
-    analytics.track('job_search_opened');
   };
 
   return (
     <Router>
-      <Layout 
-        onAddJob={openAddForm} 
+      <Layout
+        onAddJob={openAddForm}
         onOpenJobSearch={openJobSearch}
         jobCount={jobs.length}
       >
         <Routes>
-          <Route 
-            path="/" 
-            element={<DashboardPage jobs={jobs} />} 
-          />
-          <Route 
-            path="/jobs" 
+          <Route path="/" element={<DashboardPage jobs={jobs} />} />
+          <Route
+            path="/jobs"
             element={
-              <JobsPage 
-                jobs={jobs} 
-                onEdit={openEditForm} 
-                onDelete={handleDeleteJob} 
+              <JobsPage
+                jobs={jobs}
+                onEdit={openEditForm}
+                onDelete={handleDeleteJob}
               />
-            } 
-          />
-          <Route 
-            path="/analytics" 
-            element={<AnalyticsPage />} 
+            }
           />
         </Routes>
       </Layout>
@@ -126,11 +113,11 @@ function App() {
       />
 
       {/* Job Search Modal */}
-      <JobSearchModal
+      {/* <JobSearchModal
         isOpen={isJobSearchOpen}
         onClose={() => setIsJobSearchOpen(false)}
         onImportJob={handleImportJob}
-      />
+      /> */}
     </Router>
   );
 }
