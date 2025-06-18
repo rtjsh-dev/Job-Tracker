@@ -1,16 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { BarChart3, List, Plus } from "lucide-react";
 import myImage from '/final.png';
+import { Footer } from "./Footer";
 
 export const Layout = ({ children, onAddJob, jobCount }) => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4">
               <img
                 src={myImage}
@@ -69,9 +70,10 @@ export const Layout = ({ children, onAddJob, jobCount }) => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-grow">
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

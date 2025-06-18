@@ -20,7 +20,7 @@ export const Dashboard = ({ jobs }) => {
     Math.round((jobs.filter(job => job.status === 'offer').length / totalJobs) * 100) : 0;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-4">
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
