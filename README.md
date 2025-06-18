@@ -30,7 +30,7 @@ git clone https://github.com/rtjsh/job-tracker.git
 cd job-tracker
 npm install
 npm run dev
-
+```
 🎯 Why I Built This:
 As part of my journey in learning React, I wanted to build something practical and resume-worthy. This project showcases my ability to:
 
