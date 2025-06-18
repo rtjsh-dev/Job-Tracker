@@ -38,15 +38,16 @@ npm install
 
 # Start the development server
 npm run dev
+```
 
-📂 Features in Progress
+## Features in Progress
 🔍 Search and filter job applications.
 
 📅 Calendar integration for interview dates.
 
 📊 Dashboard view with analytics.
 
-🤝 Contributing
+## Contributing
 Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
-Built with 💙 using React and Tailwind by Rajesh Thapa.
+### Built with 💙 using React and Tailwind by Rajesh Thapa.
