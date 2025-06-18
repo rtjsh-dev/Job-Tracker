@@ -1,4 +1,4 @@
-# 🎯 Job Tracker (June 2025)
+# 🎯 Job Tracker 
 
 A modern and user-friendly job tracking application built using **React JS** and **Tailwind CSS**. This project helps job seekers efficiently manage and monitor their job application process with ease.
 
