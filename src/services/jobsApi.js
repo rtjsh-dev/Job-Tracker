@@ -1,12 +1,12 @@
 const API_BASE_URL = "https://findwork.dev/api";
-const API_KEY = import.meta.env.VITE_FINDWORK_API_KEY;
 
 class JobsApiService {
   constructor() {
     this.baseURL = API_BASE_URL;
     this.headers = {
-      Authorization: `Token ${API_KEY}`,
+      Authorization: `Token ${process.env.FINDWORK_API_KEY}`,
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
     };
   }
 
