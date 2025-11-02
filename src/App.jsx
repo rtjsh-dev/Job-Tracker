@@ -4,6 +4,7 @@ import { saveJobs, loadJobs, generateId } from "./utils/storage";
 import { Layout } from "./components/Layout";
 import { JobForm } from "./components/JobForm";
 // import { JobSearchModal } from "./components/JobSearchModal";
+import { HomePage } from "./pages/HomePage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { JobsPage } from "./pages/JobsPage";
 
@@ -84,27 +85,44 @@ function App() {
 
   return (
     <Router>
-      <Layout
-        onAddJob={openAddForm}
-        onOpenJobSearch={openJobSearch}
-        jobCount={jobs.length}
-      >
-        <div className="max-w-7xl mx-auto w-full">
-          <Routes>
-            <Route path="/" element={<DashboardPage jobs={jobs} />} />
-            <Route
-              path="/jobs"
-              element={
+      <Routes>
+        {/* Landing Page - No Layout */}
+        <Route path="/" element={<HomePage />} />
+
+        {/* Tracker Pages - With Layout */}
+        <Route
+          path="/tracker"
+          element={
+            <Layout
+              onAddJob={openAddForm}
+              onOpenJobSearch={openJobSearch}
+              jobCount={jobs.length}
+            >
+              <div className="max-w-7xl mx-auto w-full">
+                <DashboardPage jobs={jobs} />
+              </div>
+            </Layout>
+          }
+        />
+        <Route
+          path="/jobs"
+          element={
+            <Layout
+              onAddJob={openAddForm}
+              onOpenJobSearch={openJobSearch}
+              jobCount={jobs.length}
+            >
+              <div className="max-w-7xl mx-auto w-full">
                 <JobsPage
                   jobs={jobs}
                   onEdit={openEditForm}
                   onDelete={handleDeleteJob}
                 />
-              }
-            />
-          </Routes>
-        </div>
-      </Layout>
+              </div>
+            </Layout>
+          }
+        />
+      </Routes>
 
       {/* Job Form Modal */}
       <JobForm

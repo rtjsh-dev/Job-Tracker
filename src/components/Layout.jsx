@@ -41,9 +41,9 @@ export const Layout = ({ children, onAddJob, jobCount }) => {
             <div className="hidden lg:flex flex-row items-center gap-4 w-full sm:w-auto">
               <div className="flex bg-gray-100 rounded-lg p-1 overflow-x-auto">
                 <Link
-                  to="/"
+                  to="/tracker"
                   className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                    location.pathname === "/"
+                    location.pathname === "/tracker"
                       ? "bg-white text-blue-600 shadow-sm"
                       : "text-gray-600 hover:text-gray-900"
                   }`}

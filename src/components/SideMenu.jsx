@@ -36,10 +36,10 @@ export const SideMenu = ({ isOpen, onClose, onAddJob, jobCount }) => {
         {/* Navigation Links */}
         <nav className="p-4 space-y-2">
           <Link
-            to="/"
+            to="/tracker"
             onClick={onClose}
             className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-              location.pathname === "/"
+              location.pathname === "/tracker"
                 ? "bg-blue-50 text-blue-600 font-semibold"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
