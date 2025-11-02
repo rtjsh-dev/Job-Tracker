@@ -59,7 +59,7 @@ export const SideMenu = ({ isOpen, onClose, onAddJob, jobCount }) => {
           >
             <List className="h-5 w-5 flex-shrink-0" />
             <div className="flex items-center justify-between flex-1">
-              <span>Jobs</span>
+              <span>View Jobs</span>
               <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">
                 {jobCount}
               </span>
