@@ -89,19 +89,21 @@ function App() {
         onOpenJobSearch={openJobSearch}
         jobCount={jobs.length}
       >
-        <Routes>
-          <Route path="/" element={<DashboardPage jobs={jobs} />} />
-          <Route
-            path="/jobs"
-            element={
-              <JobsPage
-                jobs={jobs}
-                onEdit={openEditForm}
-                onDelete={handleDeleteJob}
-              />
-            }
-          />
-        </Routes>
+        <div className="max-w-7xl mx-auto w-full">
+          <Routes>
+            <Route path="/" element={<DashboardPage jobs={jobs} />} />
+            <Route
+              path="/jobs"
+              element={
+                <JobsPage
+                  jobs={jobs}
+                  onEdit={openEditForm}
+                  onDelete={handleDeleteJob}
+                />
+              }
+            />
+          </Routes>
+        </div>
       </Layout>
 
       {/* Job Form Modal */}
